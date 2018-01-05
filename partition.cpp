@@ -1430,7 +1430,7 @@ bool TWPartition::Mount(bool Display_Error) {
 	}
 
 	string mount_fs = Current_File_System;
-	if (Current_File_System == "exfat" && TWFunc::Path_Exists("/sys/module/texfat"))
+	if (Current_File_System == "exfat")
 		mount_fs = "texfat";
 
 	if (!exfat_mounted &&

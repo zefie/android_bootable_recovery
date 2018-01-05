@@ -21,6 +21,7 @@
 #define TW_VERSION_STR TW_MAIN_VERSION_STR TW_DEVICE_VERSION
 
 #define TW_USE_COMPRESSION_VAR      "tw_use_compression"
+#define TW_LG_LOCK_WIPE_VAR	    "tw_wipe_lockscreen"
 #define TW_FILENAME                 "tw_filename"
 #define TW_ZIP_INDEX                "tw_zip_index"
 #define TW_ZIP_QUEUE_COUNT       "tw_zip_queue_count"

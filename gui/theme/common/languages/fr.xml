@@ -647,5 +647,8 @@
         <string name="no_real_sdcard">Cet appareil n'a pas une vraie carte SD! Abandon!</string>
         <string name="cancel_sideload">Annulation du transfert par ADB...</string>
         <string name="change_fs_err">Erreur lors du changement du système de fichier.</string>
+	<string name="enable_backup_lock_wipe">Effacez les paramètres de sécuritée pour l'écran de verouillage LG lors de la restauration de donnés</string>
+	<string name="lge_wipe">Effacement des donnés de sécuritée pour l'écran de vérouillage LG...</string>
+
     </resources>
 </language>

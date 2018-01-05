@@ -84,6 +84,12 @@ extern "C" {
 
 extern bool datamedia;
 
+bool is_file_exist(const char *fileName)
+{
+    std::ifstream infile(fileName);
+    return infile.good();
+}
+
 TWPartitionManager::TWPartitionManager(void) {
 	mtp_was_enabled = false;
 	mtp_write_fd = -1;
@@ -997,6 +1003,7 @@ bool TWPartitionManager::Restore_Partition(PartitionSettings *part_settings) {
 			}
 		}
 	}
+
 	time(&Stop);
 	TWFunc::SetPerformanceMode(false);
 	gui_msg(Msg("restore_part_done=[{1} done ({2} seconds)]")(part_settings->Part->Backup_Display_Name)((int)difftime(Stop, Start)));
@@ -1097,6 +1104,19 @@ int TWPartitionManager::Run_Restore(const string& Restore_Name) {
 				part_settings.partition_count++;
 				if (!Restore_Partition(&part_settings))
 					return false;
+
+				if (part_settings.Part->Backup_Name == "data") {
+					int lge_wipe;
+				        DataManager::GetValue(TW_LG_LOCK_WIPE_VAR, lge_wipe);
+				        if (lge_wipe) {
+						if (is_file_exist("/data/system/locksettings.db") == true) {
+							gui_msg("lge_wipe=Wiping LG lockscreen security...");
+							unlink("/data/system/locksettings.db");
+							unlink("/data/system/locksettings.db-shm");
+							unlink("/data/system/locksettings.db-wal");
+						}
+					}
+				}
 			} else {
 				gui_msg(Msg(msg::kError, "restore_unable_locate=Unable to locate '{1}' partition for restoring.")(restore_path));
 			}

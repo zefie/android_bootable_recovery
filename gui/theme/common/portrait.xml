@@ -2430,6 +2430,13 @@
 
 			<checkbox>
 				<condition var1="tw_enable_adb_backup" op="=" var2="0"/>
+				<placement x="%indent%" y="%row16_y%"/>
+				<text>{@enable_backup_lock_wipe=Wipe LG lockscreen security when restoring data}</text>
+				<data variable="tw_wipe_lockscreen"/>
+			</checkbox>
+
+			<checkbox>
+				<condition var1="tw_enable_adb_backup" op="=" var2="0"/>
 				<placement x="%indent%" y="%row17_y%"/>
 				<text>{@restore_enable_digest_chk=Enable Digest Verification of Backup Files}</text>
 				<data variable="tw_skip_digest_check"/>
@@ -3083,6 +3090,9 @@
 				</listitem>
 				<listitem name="{@restore_enable_digest_chk=Enable Digest verification of backup files}">
 					<data variable="tw_skip_digest_check"/>
+				</listitem>
+				<listitem name="{@enable_backup_lock_wipe=Wipe LG lockscreen security when restoring data}">
+					<data variable="tw_wipe_lockscreen"/>
 				</listitem>
 				<listitem name="{@use24clock_chk=Use 24-hour clock}">
 					<data variable="tw_military_time"/>

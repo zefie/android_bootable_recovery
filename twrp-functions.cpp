@@ -901,7 +901,7 @@ void TWFunc::Fixup_Time_On_Boot()
 
 		gettimeofday(&tv, NULL);
 
-		if (tv.tv_sec > 1405209403) { // Anything older then 12 Jul 2014 23:56:43 GMT will do nicely thank you ;)
+		if (tv.tv_sec > 1513613049) {
 
 			LOGINFO("TWFunc::Fixup_Time: Date and time corrected: %s\n", TWFunc::Get_Current_Date().c_str());
 			return;

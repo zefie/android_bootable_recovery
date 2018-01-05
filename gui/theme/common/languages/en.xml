@@ -694,5 +694,7 @@
 		<string name="include_kernel_log">Include Kernel Log</string>
 		<string name="sha2_chk">Use SHA2 for hashing</string>
 		<string name="unable_set_boot_slot">Error changing bootloader boot slot to {1}</string>
+		<string name="enable_backup_lock_wipe">Wipe LG lockscreen security when restoring data</string>
+		<string name="lge_wipe">Wiping LG lockscreen security...</string>
 	</resources>
 </language>
