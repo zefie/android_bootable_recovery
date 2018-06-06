@@ -1,10 +1,12 @@
-
 service sys_vold /system/bin/vold \
         --blkid_context=u:r:blkid:s0 --blkid_untrusted_context=u:r:blkid_untrusted:s0 \
         --fsck_context=u:r:fsck:s0 --fsck_untrusted_context=u:r:fsck_untrusted:s0
+    class core
     socket vold stream 0660 root mount
     socket cryptd stream 0660 root mount
-    setenv PATH /system/bin
-    setenv LD_LIBRARY_PATH /system/lib64:/system/lib
+    ioprio be 2
+    setenv PATH /system/bin:/system/vendor/bin
+    setenv LD_LIBRARY_PATH /system/lib64:/system/vendor/lib64:/system/lib:/system/vendor/lib
+    writepid /dev/cpuset/foreground/tasks
     disabled
     oneshot
