@@ -904,7 +904,7 @@ void TWFunc::Fixup_Time_On_Boot(const string& time_paths /* = "" */)
 
 		gettimeofday(&tv, NULL);
 
-		if (tv.tv_sec > 1513613049) {
+		if (tv.tv_sec > 1405209403) { // Anything older then 12 Jul 2014 23:56:43 GMT will do nicely thank you ;)
 
 			LOGINFO("TWFunc::Fixup_Time: Date and time corrected: %s\n", TWFunc::Get_Current_Date().c_str());
 			fixed = true;
