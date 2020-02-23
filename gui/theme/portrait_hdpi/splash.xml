@@ -3,7 +3,7 @@
 	<details>
 		<resolution width="1080" />
 		<author>OrangeFox dev team & KMP design</author>
-		<title>OrangeFox Original Splash</title>
+		<title>OrangeFox Purple Splash</title>
 		<description>Design by KMP design</description>
 		<themeversion>3</themeversion>
 	</details>
@@ -15,8 +15,8 @@
 
 	<pages>
 		<page name="splash">
-			<background color="#8B3506FF"/>
-			<fill color="#E47718FF">
+			<background color="#8B7750FB"/>
+			<fill color="#E47750FB">
 				<placement x="0" y="0" w="1080" h="%center_y%"/>
 			</fill>
 			<object type="image">
